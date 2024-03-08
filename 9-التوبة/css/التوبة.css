@@ -1,0 +1,294 @@
+/* Start Variables */
+:root {
+    --main-color: #5cff65;
+    --secondry-color: #0ca114;
+    --alt-secondry-color: #0a7f11;
+    --third-color: #cd0505;
+    --alt-third-color: #830e0e;
+    --main-padding: 50px;
+    --secondry-padding: 30px;
+    --main-transition: 0.3s;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Tajawal", sans-serif;
+    direction: rtl;
+    background-color: #fffbf0;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Meduim */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Start Component */
+/* Bullets */
+.bullets {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bullets span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    margin-left: 10px;
+}
+@media (max-width: 767px) {
+    .bullets span {
+        width: 15px;
+        height: 15px;
+    }
+}
+/* Button */
+.button {
+    background-color: var(--secondry-color);
+    font-size: 20px;
+    position: fixed;
+    bottom: 25%;
+    padding: 10px 15px;
+    margin-right: 20px;
+    z-index: 2;
+}
+.button i {
+    color: white;
+}
+/* End Component */
+/* End Global Rules */
+/* Start Header */
+.header {
+    position: relative;
+    right: 0;
+    width: 100%;
+    background-color: #333;
+}
+.header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 92px;
+}
+.header a h1 {
+    color: var(--main-color);
+}
+.header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header nav .toggle-menu {
+    color: var(--main-color);
+    font-size: 18px;
+}
+@media (min-width: 767px) {
+    .header nav .toggle-menu {
+        display: none;
+    }
+}
+.header nav ul {
+    display: flex;
+}
+@media (max-width: 767px) {
+    .header nav ul {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(0 0 0 / 80%);
+        color: white;
+        position: absolute;
+        left: 0;
+        min-width: 200px;
+        top: calc(100% + -4px);
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        font-weight: bold;
+    }
+    .header nav ul li:not(:last-child) {
+        border-bottom: 1px solid #eee;
+    }
+    .header nav ul::before {
+        position: absolute;
+        content: "";
+        border: 17px solid;
+        border-color: transparent transparent var(--main-color) transparent;
+        left: 8px;
+        top: -30px;
+    }
+    .header nav:hover ul {
+        display: block;
+        z-index: 2;
+    }
+}
+.header nav ul li a {
+    padding: 40px 10px;
+    display: block;
+    color: var(--main-color);
+    font-size: 20px;
+    transition: var(--main-transition);
+    position: relative;
+    z-index: 2;
+}
+@media (max-width: 767px) {
+    .header nav ul li a {
+        padding: 20px 10px;
+    }
+}
+.header nav ul li a.active,
+.header nav ul li a:hover {
+    color: white;
+    border-bottom: 1px solid white;
+}
+/* End Header */
+/* Start Note */
+.note {
+    padding-top: var(--main-padding);
+    position: relative;
+}
+.note h3 {
+    background: linear-gradient(to left, red, wheat);
+    padding: 10px 20px;
+    box-shadow: 2px 2px 10px var(--alt-third-color);
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+.note .text {
+    margin: var(--secondry-padding) var(--secondry-padding) var(--secondry-padding) 0;
+}
+.note .text p {
+    font-size: 25px;
+    line-height: 1.5;
+    position: relative;
+}
+@media (max-width: 767px) {
+    .note .text p {
+        font-size: 16px;
+    }
+}
+.note .text p::before {
+    content: "";
+    position: absolute;
+    background-color: #0075ff;
+    width: 15px;
+    height: 15px;
+    right: -32px;
+    top: 10px;
+}
+.note .text p:last-child span {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+}
+.note .text p:nth-child(2) span,
+.note .text p:last-child q:first-child,
+.note .text p:last-child span {
+    color: var(--secondry-color);
+}
+/* End Note */
+/* Start Reading */
+.images {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.images img {
+    width: 100%;
+}
+/* End Reading */
+/* Start Moving */
+.moving {
+    padding-top: var(--secondry-padding);
+    padding-bottom: var(--secondry-padding);
+}
+.moving .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.moving .content a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    transition: var(--main-transition);
+    border-radius: 6px;
+}
+.moving .content.next a i {
+    margin-right: 10px;
+}
+.moving .content .next {
+    background-color: var(--secondry-color);
+    margin-bottom: 15px;
+}
+.moving .content .next:hover {
+    background-color: var(--alt-secondry-color);
+}
+.moving .content .previous {
+    background-color: var(--third-color);
+}
+.moving .content .previous:hover {
+    background-color: var(--alt-third-color);
+}
+.moving .content.previous a i {
+    margin-left: 10px;
+}
+/* End Moving */
+.footer {
+    padding-top: var(--secondry-padding);
+    padding-bottom: var(--secondry-padding);
+    background-color: #040a21;
+}
+.footer p {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.5;
+}
+@media (max-width: 767px) {
+    .footer p {
+        font-size: 14px;
+    }
+}
+.footer p span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+/* End Footer */
